@@ -1,0 +1,36 @@
+import { motion } from "framer-motion";
+import SlideLayout from "../SlideLayout";
+
+export default function Slide1_Intro() {
+    return (
+        <SlideLayout>
+            <div className="flex flex-col items-center justify-center h-full text-center">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8 }}
+                    className="mb-12 flex flex-col items-center"
+                >
+                    <img
+                        src="https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-logo.png"
+                        alt="n8n Logo"
+                        className="h-24 md:h-32 mb-8 drop-shadow-[0_0_15px_rgba(255,107,107,0.4)]"
+                    />
+                    <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-rose-500 to-purple-600">
+                        Automate with n8n
+                    </h1>
+                 
+                </motion.div>
+
+                <motion.div
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.5, duration: 0.8 }}
+                    className="w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-2xl border border-zinc-800"
+                >
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ZCuL2e4zC_4?si=TgpxD-sAhiU2_VWy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </motion.div>
+            </div>
+        </SlideLayout>
+    );
+}
