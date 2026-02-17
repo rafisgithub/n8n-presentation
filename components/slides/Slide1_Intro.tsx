@@ -5,25 +5,14 @@ export default function Slide1_Intro() {
     return (
         <SlideLayout>
             {/* Personal Branding Sidebar */}
+            {/* Personal Branding Sidebar */}
             <motion.div
-                initial={{ x: -50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1, duration: 0.8 }}
-                className="absolute left-8 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-4 text-left border-l-2 border-zinc-800 pl-6"
+                className="absolute left-8 bottom-8 hidden xl:flex flex-row gap-8 text-left items-center"
             >
-                <div>
-                    <p className="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-1">Presented By</p>
-                    <h3 className="text-white text-xl font-bold">Rafi Ahmed</h3>
-                    <p className="text-rose-500 font-medium">Django Developer</p>
-                </div>
-                <div>
-                    <p className="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-1">Employee ID</p>
-                    <p className="text-zinc-300 font-mono">15355</p>
-                </div>
-                <div>
-                    <p className="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-1">Organization</p>
-                    <p className="text-zinc-300 font-bold">Betopia Group</p>
-                </div>
+               
             </motion.div>
             <div className="flex flex-col items-center justify-center h-full text-center">
                 <motion.div
