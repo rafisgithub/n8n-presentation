@@ -34,7 +34,7 @@ export default function Slide9_Summary() {
                 </motion.button>
 
                 <footer className="absolute bottom-8 text-zinc-700 text-sm">
-                    Press 'Left Arrow' to restart
+                    Press &apos;Left Arrow&apos; to restart
                 </footer>
             </div>
         </SlideLayout>

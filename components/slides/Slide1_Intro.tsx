@@ -16,10 +16,18 @@ export default function Slide1_Intro() {
                         alt="n8n Logo"
                         className="h-24 md:h-32 mb-8 drop-shadow-[0_0_15px_rgba(255,107,107,0.4)]"
                     />
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="mb-4 px-4 py-1 rounded-full border border-zinc-700 bg-zinc-800/50 backdrop-blur-sm"
+                    >
+                        <span className="text-sm font-mono text-zinc-400 uppercase tracking-widest">Exclusively for <span className="text-white font-bold">Betopia Group</span></span>
+                    </motion.div>
                     <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-rose-500 to-purple-600">
                         Automate with n8n
                     </h1>
-                 
+
                 </motion.div>
 
                 <motion.div
@@ -28,7 +36,7 @@ export default function Slide1_Intro() {
                     transition={{ delay: 0.5, duration: 0.8 }}
                     className="w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-2xl border border-zinc-800"
                 >
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ZCuL2e4zC_4?si=TgpxD-sAhiU2_VWy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ZCuL2e4zC_4?si=TgpxD-sAhiU2_VWy" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                 </motion.div>
             </div>
         </SlideLayout>

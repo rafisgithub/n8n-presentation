@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, ReactNode } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import Slide1_Intro from "./slides/Slide1_Intro";
 import Slide2_WhatIs from "./slides/Slide2_WhatIs";

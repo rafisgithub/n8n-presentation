@@ -22,7 +22,7 @@ const features = [
 
 export default function Slide2_WhatIs() {
     return (
-        <SlideLayout title="What is n8n?" subtitle="The workflow automation tool for technical teams.">
+        <SlideLayout title="What is n8n?" subtitle="A powerful, low-code workflow automation tool designed to connect web applications, databases, and AI tools to automate repetitive tasks.">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 {features.map((f, i) => (
                     <motion.div

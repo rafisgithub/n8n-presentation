@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FileSpreadsheet, Mail, MessageSquare, AlertTriangle, X, Loader2 } from "lucide-react";
+import { Mail, MessageSquare, AlertTriangle, Loader2 } from "lucide-react";
 import SlideLayout from "../SlideLayout";
 
 export default function Slide3_ManualWorkflow() {
@@ -77,7 +77,7 @@ export default function Slide3_ManualWorkflow() {
                             <div className="flex gap-2">
                                 <div className="w-6 h-6 rounded bg-purple-500/20 flex-shrink-0" />
                                 <div className="bg-zinc-800 rounded p-2 text-[10px] text-zinc-300">
-                                    Did the automation run? I don't see the order.
+                                    Did the automation run? I don&apos;t see the order.
                                 </div>
                             </div>
                             <div className="flex gap-2 flex-row-reverse">
