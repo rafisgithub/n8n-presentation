@@ -12,7 +12,7 @@ export default function Slide1_Intro() {
                 transition={{ delay: 1, duration: 0.8 }}
                 className="absolute left-8 bottom-8 hidden xl:flex flex-row gap-8 text-left items-center"
             >
-               
+
             </motion.div>
             <div className="flex flex-col items-center justify-center h-full text-center">
                 <motion.div
@@ -37,6 +37,9 @@ export default function Slide1_Intro() {
                     <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-rose-500 to-purple-600">
                         Automate with n8n
                     </h1>
+                    <p className="text-xl text-zinc-400 mt-2 font-light">
+                        From <span className="text-blue-400 font-medium">Traditional Full-Stack</span> to <span className="text-orange-500 font-medium">Intelligent Automation</span>.
+                    </p>
 
                 </motion.div>
 

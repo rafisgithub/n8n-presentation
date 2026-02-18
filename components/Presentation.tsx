@@ -7,10 +7,12 @@ import Slide2_WhatIs from "./slides/Slide2_WhatIs";
 import Slide3_ManualWorkflow from "./slides/Slide3_ManualWorkflow";
 import Slide4_AutomatedWorkflow from "./slides/Slide4_AutomatedWorkflow";
 import Slide5_Process from "./slides/Slide5_Process";
-import Slide6_Features from "./slides/Slide6_Features";
-import Slide7_Comparison from "./slides/Slide7_Comparison";
-import Slide8_SalesTips from "./slides/Slide8_SalesTips";
-import Slide9_Summary from "./slides/Slide9_Summary";
+import Slide5_5_EngagementStrategy from "./slides/Slide5_5_EngagementStrategy";
+import Slide6_FullStack from "./slides/Slide6_FullStack";
+import Slide7_FullStackAutomation from "./slides/Slide7_FullStackAutomation";
+import Slide8_AutomationOnly from "./slides/Slide8_AutomationOnly";
+import Slide9_Outro from "./slides/Slide9_Outro";
+
 
 const SLIDES = [
     Slide1_Intro,
@@ -18,10 +20,12 @@ const SLIDES = [
     Slide3_ManualWorkflow,
     Slide4_AutomatedWorkflow,
     Slide5_Process,
-    Slide6_Features,
-    Slide7_Comparison,
-    Slide8_SalesTips,
-    Slide9_Summary,
+    Slide5_5_EngagementStrategy,
+    Slide6_FullStack,
+    Slide7_FullStackAutomation,
+    Slide8_AutomationOnly,
+    Slide9_Outro,
+
 ];
 
 export default function Presentation() {
