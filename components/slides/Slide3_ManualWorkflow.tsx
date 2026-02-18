@@ -7,14 +7,14 @@ export default function Slide3_ManualWorkflow() {
         <SlideLayout title="The Old Way" subtitle="Manual processes are slow, error-prone, and unscalable.">
             <div className="relative h-full flex items-center justify-center pointer-events-none">
                 {/* Chaos Container - Simulating a crowded desktop */}
-                <div className="relative w-full max-w-5xl h-[500px] perspective-1000">
+                <div className="relative w-full max-w-7xl h-[600px] perspective-1000">
 
                     {/* Window 1: The Massive Spreadsheet (The Base of Misery) */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8, y: 50 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="absolute top-10 left-10 w-[70%] h-[350px] bg-zinc-900 border border-zinc-700 rounded-lg shadow-2xl overflow-hidden flex flex-col z-10"
+                        className="absolute top-10 left-10 w-[70%] h-[450px] bg-zinc-900 border border-zinc-700 rounded-lg shadow-2xl overflow-hidden flex flex-col z-10"
                     >
                         {/* Title Bar */}
                         <div className="h-8 bg-zinc-800 flex items-center px-3 gap-2 border-b border-zinc-700">
@@ -29,8 +29,8 @@ export default function Slide3_ManualWorkflow() {
                         <div className="p-4 overflow-hidden relative">
                             <div className="grid grid-cols-4 gap-1 mb-2 opacity-50">
                                 {[...Array(16)].map((_, i) => (
-                                    <div key={i} className="h-6 bg-zinc-800/50 rounded flex items-center px-2 text-[10px] text-zinc-500">
-                                        {i === 7 ? <span className="text-red-500 font-bold">#REF!</span> : "Data..."}
+                                    <div key={i} className="h-8 bg-zinc-800/50 rounded flex items-center px-2 text-xs text-zinc-500">
+                                        {i === 7 ? <span className="text-red-500 font-bold text-sm">#REF!</span> : "Data..."}
                                     </div>
                                 ))}
                             </div>
@@ -46,8 +46,8 @@ export default function Slide3_ManualWorkflow() {
                         className="absolute top-24 right-16 w-[45%] h-[300px] bg-zinc-900 border border-zinc-700 rounded-lg shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col z-20"
                     >
                         <div className="h-8 bg-blue-900/20 flex items-center px-3 border-b border-blue-900/30">
-                            <Mail className="w-4 h-4 text-blue-400 mr-2" />
-                            <span className="text-xs text-blue-200">Inbox (1,402 unread)</span>
+                            <Mail className="w-5 h-5 text-blue-400 mr-2" />
+                            <span className="text-sm text-blue-200">Inbox (1,402 unread)</span>
                         </div>
                         <div className="p-4 space-y-3">
                             <div className="bg-zinc-800/50 p-3 rounded border-l-2 border-red-500">
@@ -56,8 +56,8 @@ export default function Slide3_ManualWorkflow() {
                                 <p className="text-[10px] text-zinc-500 mt-1">Why is column C empty again?? The client is waiting...</p>
                             </div>
                             <div className="bg-zinc-800/30 p-3 rounded">
-                                <p className="text-xs font-bold text-zinc-300">Re: Re: CSV Format?</p>
-                                <p className="text-[10px] text-zinc-500 mt-1">Just download it manually and fix the dates.</p>
+                                <p className="text-sm font-bold text-zinc-300">Re: Re: CSV Format?</p>
+                                <p className="text-xs text-zinc-500 mt-1">Just download it manually and fix the dates.</p>
                             </div>
                         </div>
                     </motion.div>
@@ -99,9 +99,9 @@ export default function Slide3_ManualWorkflow() {
                         <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center mb-2">
                             <AlertTriangle className="w-5 h-5 text-red-500" />
                         </div>
-                        <h3 className="text-white font-bold text-sm">Upload Failed</h3>
-                        <p className="text-xs text-zinc-400 mt-1">Connection timed out after 300s.</p>
-                        <button className="mt-3 px-4 py-1 bg-red-500 hover:bg-red-600 text-white text-xs rounded transition-colors w-full">Retry (Manual)</button>
+                        <h3 className="text-white font-bold text-lg">Upload Failed</h3>
+                        <p className="text-sm text-zinc-400 mt-1">Connection timed out after 300s.</p>
+                        <button className="mt-3 px-6 py-2 bg-red-500 hover:bg-red-600 text-white text-sm rounded transition-colors w-full">Retry (Manual)</button>
                     </motion.div>
 
                     <motion.div

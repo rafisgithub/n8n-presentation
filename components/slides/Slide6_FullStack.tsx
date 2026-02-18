@@ -46,11 +46,11 @@ export default function Slide6_FullStack() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.1 }}
-                            className="flex flex-col items-center text-center p-4 rounded-xl bg-zinc-900/50 border border-zinc-800"
+                            className="flex flex-col items-center text-center p-6 rounded-xl bg-zinc-900/50 border border-zinc-800 hover:bg-zinc-800/50 transition-colors"
                         >
-                            <phase.icon className={`w-8 h-8 mb-3 ${phase.color}`} />
-                            <h3 className="font-bold text-sm mb-2">{phase.title}</h3>
-                            <ul className="text-xs text-zinc-400 space-y-1">
+                            <phase.icon className={`w-12 h-12 mb-4 ${phase.color}`} />
+                            <h3 className="font-bold text-lg mb-3">{phase.title}</h3>
+                            <ul className="text-sm text-zinc-400 space-y-2">
                                 {phase.details.map((d, j) => (
                                     <li key={j}>• {d}</li>
                                 ))}
@@ -63,10 +63,10 @@ export default function Slide6_FullStack() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6 }}
-                    className="mt-4 p-6 rounded-2xl bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-500/30 text-center"
+                    className="mt-8 p-8 rounded-2xl bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-500/30 text-center"
                 >
-                    <h3 className="text-xl font-bold text-blue-200 mb-2">✔ Result: User must operate the system manually.</h3>
-                    <p className="text-zinc-400">Example: E-commerce site, Portfolio website, Booking app (without auto-sync).</p>
+                    <h3 className="text-3xl font-bold text-blue-200 mb-3">✔ Result: User must operate the system manually.</h3>
+                    <p className="text-lg text-zinc-400">Example: E-commerce site, Portfolio website, Booking app (without auto-sync).</p>
                 </motion.div>
             </div>
         </SlideLayout>

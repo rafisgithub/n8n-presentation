@@ -35,13 +35,13 @@ export default function Slide5_Process() {
                         transition={{ delay: i * 0.4 }}
                         className="w-full max-w-sm"
                     >
-                        <div className={`text-6xl font-black opacity-10 mb-[-1.5rem] ml-4 ${step.color}`}>0{i + 1}</div>
-                        <div className="p-8 rounded-3xl bg-zinc-900/40 border border-zinc-800 backdrop-blur-sm relative z-10 hover:bg-zinc-900/60 transition-colors">
-                            <div className={`mb-6 p-4 rounded-xl bg-black/50 w-fit border border-zinc-800 ${step.color}`}>
-                                <step.icon className="w-8 h-8" />
+                        <div className={`text-8xl font-black opacity-10 mb-[-2rem] ml-4 ${step.color}`}>0{i + 1}</div>
+                        <div className="p-10 rounded-3xl bg-zinc-900/40 border border-zinc-800 backdrop-blur-sm relative z-10 hover:bg-zinc-900/60 transition-colors h-[450px] flex flex-col">
+                            <div className={`mb-8 p-6 rounded-xl bg-black/50 w-fit border border-zinc-800 ${step.color}`}>
+                                <step.icon className="w-10 h-10" />
                             </div>
-                            <h3 className="text-2xl font-bold mb-6">{step.title}</h3>
-                            <ul className="space-y-3">
+                            <h3 className="text-3xl font-bold mb-8">{step.title}</h3>
+                            <ul className="space-y-4">
                                 {step.points.map((p, j) => (
                                     <motion.li
                                         key={j}
@@ -50,8 +50,8 @@ export default function Slide5_Process() {
                                         transition={{ delay: (i * 0.4) + (j * 0.1) + 0.5 }}
                                         className="flex items-center gap-3 text-zinc-400"
                                     >
-                                        <div className="w-1.5 h-1.5 rounded-full bg-zinc-600" />
-                                        {p}
+                                        <div className="w-2 h-2 rounded-full bg-zinc-600" />
+                                        <span className="text-lg">{p}</span>
                                     </motion.li>
                                 ))}
                             </ul>

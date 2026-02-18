@@ -24,20 +24,20 @@ export default function Slide1_Intro() {
                     <img
                         src="https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-logo.png"
                         alt="n8n Logo"
-                        className="h-24 md:h-32 mb-8 drop-shadow-[0_0_15px_rgba(255,107,107,0.4)]"
+                        className="h-32 md:h-40 mb-10 drop-shadow-[0_0_20px_rgba(255,107,107,0.5)]"
                     />
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="mb-4 px-4 py-1 rounded-full border border-zinc-700 bg-zinc-800/50 backdrop-blur-sm"
+                        className="mb-6 px-6 py-2 rounded-full border border-zinc-700 bg-zinc-800/50 backdrop-blur-sm"
                     >
-                        <span className="text-sm font-mono text-zinc-400 uppercase tracking-widest">Exclusively for <span className="text-white font-bold">Betopia Group</span></span>
+                        <span className="text-base md:text-lg font-mono text-zinc-400 uppercase tracking-widest">Exclusively for <span className="text-white font-bold">Betopia Group</span></span>
                     </motion.div>
-                    <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-rose-500 to-purple-600">
+                    <h1 className="text-7xl md:text-9xl font-black tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-rose-500 to-purple-600">
                         Automate with n8n
                     </h1>
-                    <p className="text-xl text-zinc-400 mt-2 font-light">
+                    <p className="text-2xl md:text-3xl text-zinc-400 mt-4 font-light">
                         From <span className="text-blue-400 font-medium">Traditional Full-Stack</span> to <span className="text-orange-500 font-medium">Intelligent Automation</span>.
                     </p>
 

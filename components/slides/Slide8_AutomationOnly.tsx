@@ -43,28 +43,28 @@ const phases = [
 export default function Slide8_AutomationOnly() {
     return (
         <SlideLayout title="3. Automation-Only Project" subtitle="No software development. Automating existing business processes.">
-            <div className="flex flex-col gap-6 h-full justify-center">
-                <div className="grid grid-cols-5 gap-4">
+            <div className="flex flex-col gap-8 h-full justify-center">
+                <div className="grid grid-cols-5 gap-6 w-full max-w-7xl">
                     {phases.map((phase, i) => (
                         <motion.div
                             key={i}
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: i * 0.1 }}
-                            className="flex flex-col items-center text-center p-4 rounded-xl bg-zinc-900/50 border border-zinc-800 relative overflow-hidden group hover:border-zinc-600 transition-colors"
+                            className="flex flex-col items-center text-center p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800 relative overflow-hidden group hover:border-zinc-600 transition-colors h-[350px]"
                         >
-                            <phase.icon className={`w-8 h-8 mb-3 ${phase.color}`} />
-                            <h3 className="font-bold text-sm mb-2">{phase.title}</h3>
-                            <ul className="text-xs text-zinc-400 space-y-1 mb-4">
+                            <phase.icon className={`w-12 h-12 mb-6 ${phase.color}`} />
+                            <h3 className="font-bold text-xl mb-4">{phase.title}</h3>
+                            <ul className="text-sm text-zinc-400 space-y-2 mb-6">
                                 {phase.details.map((d, j) => (
                                     <li key={j}>• {d}</li>
                                 ))}
                             </ul>
 
                             {/* Price Tag */}
-                            <div className="mt-auto pt-3 border-t border-zinc-800 w-full">
-                                <span className="text-xs font-mono text-emerald-400 flex items-center justify-center gap-1">
-                                    <DollarSign className="w-3 h-3" />
+                            <div className="mt-auto pt-4 border-t border-zinc-800 w-full">
+                                <span className="text-sm font-mono text-emerald-400 flex items-center justify-center gap-2">
+                                    <DollarSign className="w-4 h-4" />
                                     {phase.price}
                                 </span>
                             </div>
@@ -79,12 +79,12 @@ export default function Slide8_AutomationOnly() {
                         transition={{ delay: 0.6 }}
                         className="p-4 rounded-xl bg-zinc-900/30 border border-zinc-800 flex items-center gap-4"
                     >
-                        <div className="p-3 bg-emerald-900/20 rounded-lg text-emerald-400">
-                            <DollarSign className="w-6 h-6" />
+                        <div className="p-4 bg-emerald-900/20 rounded-xl text-emerald-400">
+                            <DollarSign className="w-8 h-8" />
                         </div>
                         <div>
-                            <h4 className="font-bold text-white">Total Estimated Cost</h4>
-                            <p className="text-emerald-400 font-mono text-lg">$600 - $2,200</p>
+                            <h4 className="font-bold text-white text-xl">Total Estimated Cost</h4>
+                            <p className="text-emerald-400 font-mono text-3xl">$600 - $2,200</p>
                         </div>
                     </motion.div>
 
@@ -92,11 +92,11 @@ export default function Slide8_AutomationOnly() {
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.7 }}
-                        className="p-4 rounded-xl bg-zinc-900/30 border border-zinc-800"
+                        className="p-8 rounded-2xl bg-zinc-900/30 border border-zinc-800"
                     >
-                        <h4 className="font-bold text-white mb-1">✔ Result</h4>
-                        <p className="text-sm text-zinc-400">Manual tasks replaced with automated workflows.</p>
-                        <p className="text-xs text-zinc-500 mt-2 italic">Ex: Google Form → DB → Email → Slack.</p>
+                        <h4 className="font-bold text-white mb-2 text-xl">✔ Result</h4>
+                        <p className="text-xl text-zinc-400">Manual tasks replaced with automated workflows.</p>
+                        <p className="text-sm text-zinc-500 mt-2 italic">Ex: Google Form → DB → Email → Slack.</p>
                     </motion.div>
                 </div>
             </div>

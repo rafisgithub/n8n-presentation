@@ -20,13 +20,13 @@ export default function Slide9_Outro() {
                         initial={{ y: -20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.2 }}
-                        className="w-24 h-24 rounded-full bg-gradient-to-br from-orange-500 to-rose-600 mb-6 flex items-center justify-center shadow-lg"
+                        className="w-32 h-32 rounded-full bg-gradient-to-br from-orange-500 to-rose-600 mb-8 flex items-center justify-center shadow-lg"
                     >
-                        <User className="w-10 h-10 text-white" />
+                        <User className="w-16 h-16 text-white" />
                     </motion.div>
 
-                    <h2 className="text-4xl font-black text-white mb-2">Rafi Ahmed</h2>
-                    <p className="text-zinc-400 mb-8 font-light text-lg">Automation Specialist & Full-Stack Developer</p>
+                    <h2 className="text-6xl font-black text-white mb-4">Rafi Ahmed</h2>
+                    <p className="text-zinc-400 mb-12 font-light text-2xl">Automation Specialist & Full-Stack Developer</p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 w-full text-left">
 
@@ -34,14 +34,15 @@ export default function Slide9_Outro() {
                             initial={{ x: -20, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
                             transition={{ delay: 0.4 }}
-                            className="flex items-center gap-3"
                         >
-                            <div className="p-2 rounded-lg bg-zinc-800 text-zinc-400">
-                                <IdCard className="w-5 h-5" />
-                            </div>
-                            <div>
-                                <p className="text-xs text-zinc-500 uppercase tracking-wider font-bold">Employee ID</p>
-                                <p className="text-white font-mono">15355</p>
+                            <div className="flex items-center gap-4">
+                                <div className="p-3 rounded-xl bg-zinc-800 text-zinc-400">
+                                    <IdCard className="w-8 h-8" />
+                                </div>
+                                <div>
+                                    <p className="text-sm text-zinc-500 uppercase tracking-wider font-bold">Employee ID</p>
+                                    <p className="text-white font-mono text-xl">15355</p>
+                                </div>
                             </div>
                         </motion.div>
 
@@ -49,14 +50,15 @@ export default function Slide9_Outro() {
                             initial={{ x: 20, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
                             transition={{ delay: 0.5 }}
-                            className="flex items-center gap-3"
                         >
-                            <div className="p-2 rounded-lg bg-zinc-800 text-purple-400">
-                                <Briefcase className="w-5 h-5" />
-                            </div>
-                            <div>
-                                <p className="text-xs text-zinc-500 uppercase tracking-wider font-bold">Company</p>
-                                <p className="text-white">Betopia Group</p>
+                            <div className="flex items-center gap-4">
+                                <div className="p-3 rounded-xl bg-zinc-800 text-purple-400">
+                                    <Briefcase className="w-8 h-8" />
+                                </div>
+                                <div>
+                                    <p className="text-sm text-zinc-500 uppercase tracking-wider font-bold">Company</p>
+                                    <p className="text-white text-xl">Betopia Group</p>
+                                </div>
                             </div>
                         </motion.div>
 
@@ -64,14 +66,15 @@ export default function Slide9_Outro() {
                             initial={{ x: -20, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
                             transition={{ delay: 0.6 }}
-                            className="flex items-center gap-3"
                         >
-                            <div className="p-2 rounded-lg bg-zinc-800 text-blue-400">
-                                <MapPin className="w-5 h-5" />
-                            </div>
-                            <div>
-                                <p className="text-xs text-zinc-500 uppercase tracking-wider font-bold">Branch</p>
-                                <p className="text-white">Softvence</p>
+                            <div className="flex items-center gap-4">
+                                <div className="p-3 rounded-xl bg-zinc-800 text-blue-400">
+                                    <MapPin className="w-8 h-8" />
+                                </div>
+                                <div>
+                                    <p className="text-sm text-zinc-500 uppercase tracking-wider font-bold">Branch</p>
+                                    <p className="text-white text-xl">Softvence</p>
+                                </div>
                             </div>
                         </motion.div>
 
@@ -79,20 +82,21 @@ export default function Slide9_Outro() {
                             initial={{ x: 20, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
                             transition={{ delay: 0.7 }}
-                            className="flex items-center gap-3"
                         >
-                            <div className="p-2 rounded-lg bg-zinc-800 text-orange-400">
-                                <Users className="w-5 h-5" />
+                            <div className="flex items-center gap-4">
+                                <div className="p-3 rounded-xl bg-zinc-800 text-orange-400">
+                                    <Users className="w-8 h-8" />
+                                </div>
+                                <div>
+                                    <p className="text-sm text-zinc-500 uppercase tracking-wider font-bold">Team</p>
+                                    <p className="text-white text-xl">Dotpy</p>
+                                </div>
                             </div>
-                            <div>
-                                <p className="text-xs text-zinc-500 uppercase tracking-wider font-bold">Team</p>
-                                <p className="text-white">Dotpy</p>
-                            </div>
-                        </motion.div>
+                        </motion.div >
 
-                    </div>
+                    </div >
 
-                </motion.div>
+                </motion.div >
 
                 <p className="absolute bottom-8 text-zinc-600 text-sm font-mono">End of Presentation</p>
 

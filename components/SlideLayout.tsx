@@ -43,7 +43,7 @@ export default function SlideLayout({
                                 initial={{ y: -20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.2 }}
-                                className="text-4xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-400"
+                                className="text-5xl md:text-7xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-400"
                             >
                                 {title}
                             </motion.h1>
@@ -53,7 +53,7 @@ export default function SlideLayout({
                                 initial={{ y: -10, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.3 }}
-                                className="mt-2 text-xl md:text-2xl text-zinc-400 font-light"
+                                className="mt-4 text-2xl md:text-3xl text-zinc-400 font-light"
                             >
                                 {subtitle}
                             </motion.p>

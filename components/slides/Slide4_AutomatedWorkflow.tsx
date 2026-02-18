@@ -10,7 +10,7 @@ const Node = ({ icon: Icon, label, status, x, y, delay }: any) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay, duration: 0.5 }}
-            className={`absolute flex flex-col items-center gap-2 p-4 rounded-2xl border-2 w-32 backdrop-blur-md shadow-2xl z-10 
+            className={`absolute flex flex-col items-center gap-3 p-6 rounded-2xl border-2 w-48 backdrop-blur-md shadow-2xl z-10 
             ${status === "waiting" ? "border-zinc-800 bg-zinc-900/80 text-zinc-600" : ""}
             ${status === "active" ? "border-orange-500 bg-zinc-900 text-orange-400 shadow-[0_0_30px_rgba(249,115,22,0.3)] ring-1 ring-orange-500/50" : ""}
             ${status === "success" ? "border-green-500 bg-zinc-900 text-green-400 shadow-[0_0_20px_rgba(34,197,94,0.2)]" : ""}
@@ -18,9 +18,9 @@ const Node = ({ icon: Icon, label, status, x, y, delay }: any) => {
             style={{ left: x, top: y }}
         >
             <div className={`p-3 rounded-full transition-colors duration-300 ${status === "active" ? "bg-orange-500/20 animate-pulse" : "bg-zinc-800"}`}>
-                <Icon className="w-6 h-6" />
+                <Icon className="w-8 h-8" />
             </div>
-            <span className="text-xs font-bold whitespace-nowrap">{label}</span>
+            <span className="text-sm font-bold whitespace-nowrap">{label}</span>
 
             {/* Connector Points */}
             <div className="absolute -right-1.5 top-1/2 w-3 h-3 rounded-full bg-zinc-700 border border-zinc-900" />
@@ -117,7 +117,7 @@ export default function Slide4_AutomatedWorkflow() {
             <div className="relative h-full flex flex-col items-center justify-center">
 
                 {/* Workflow Canvas */}
-                <div className="relative w-full max-w-5xl h-[450px] bg-[#09090b] rounded-xl border border-zinc-800 shadow-2xl overflow-hidden group">
+                <div className="relative w-full max-w-7xl h-[600px] bg-[#09090b] rounded-xl border border-zinc-800 shadow-2xl overflow-hidden group">
 
                     {/* Grid Background */}
                     <div className="absolute inset-0 opacity-20"
@@ -133,22 +133,26 @@ export default function Slide4_AutomatedWorkflow() {
                         status={step >= 1 ? (step > 1 ? "success" : "active") : "waiting"}
                     />
                     {/* 5% of 1000 = 50. Center Y ~225. + 40 (center of node height approx) -> actually using top:40% so ~180px + node half height */}
-                    {/* Let's align Y in Connection to Node center. Node is top 40%. Height w-32 is width, height auto. p-4 + icon + text. Approx 110px. Center ~55px. */}
-                    {/* 40% of 450 = 180. Center Y = 180 + 55 = 235. */}
+                    {/* Center Y approx 300 (600/2) */}
 
-                    <Connection startX={178} endX={300} y={235} active={step >= 2} />
+                    <Node
+                        icon={Globe} label="Webhook" x="5%" y="40%" delay={0}
+                        status={step >= 1 ? (step > 1 ? "success" : "active") : "waiting"}
+                    />
+
+                    <Connection startX={220} endX={350} y={300} active={step >= 2} />
 
                     <Node
                         icon={Database} label="Get User Data" x="30%" y="40%" delay={0.1}
                         status={step >= 2 ? (step > 2 ? "success" : "active") : "waiting"}
                     />
-                    <Connection startX={428} endX={550} y={235} active={step >= 3} />
+                    <Connection startX={550} endX={680} y={300} active={step >= 3} />
 
                     <Node
                         icon={Bot} label="AI Generate" x="55%" y="40%" delay={0.2}
                         status={step >= 3 ? (step > 3 ? "success" : "active") : "waiting"}
                     />
-                    <Connection startX={678} endX={800} y={235} active={step >= 4} />
+                    <Connection startX={880} endX={1010} y={300} active={step >= 4} />
 
                     <Node
                         icon={Mail} label="Send Email" x="80%" y="40%" delay={0.3}
@@ -159,7 +163,7 @@ export default function Slide4_AutomatedWorkflow() {
                     <motion.div
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        className="absolute bottom-6 left-6 w-96 bg-black/90 backdrop-blur-md rounded-lg border border-zinc-800 p-4 font-mono text-[10px] shadow-2xl"
+                        className="absolute bottom-8 left-8 w-[500px] bg-black/90 backdrop-blur-md rounded-lg border border-zinc-800 p-6 font-mono text-xs shadow-2xl"
                     >
                         <div className="flex items-center gap-2 mb-3 border-b border-zinc-800 pb-2">
                             <Terminal className="w-3 h-3 text-zinc-500" />

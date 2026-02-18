@@ -34,11 +34,11 @@ export default function Slide7_FullStackAutomation() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.2 }}
-                            className={`flex flex-col items-center text-center p-6 rounded-xl border ${i === 1 ? 'bg-orange-950/20 border-orange-500/50 scale-105 shadow-[0_0_30px_rgba(249,115,22,0.1)]' : 'bg-zinc-900/50 border-zinc-800'}`}
+                            className={`flex flex-col items-center text-center p-10 rounded-2xl border min-h-[400px] justify-center ${i === 1 ? 'bg-orange-950/20 border-orange-500/50 scale-105 shadow-[0_0_50px_rgba(249,115,22,0.2)]' : 'bg-zinc-900/50 border-zinc-800'}`}
                         >
-                            <phase.icon className={`w-10 h-10 mb-4 ${phase.color}`} />
-                            <h3 className="font-bold text-lg mb-2">{phase.title}</h3>
-                            <ul className="text-sm text-zinc-400 space-y-2">
+                            <phase.icon className={`w-20 h-20 mb-8 ${phase.color}`} />
+                            <h3 className="font-bold text-3xl mb-6">{phase.title}</h3>
+                            <ul className="text-xl text-zinc-400 space-y-4">
                                 {phase.details.map((d, j) => (
                                     <li key={j}>• {d}</li>
                                 ))}
@@ -51,10 +51,10 @@ export default function Slide7_FullStackAutomation() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6 }}
-                    className="mt-8 p-6 rounded-2xl bg-gradient-to-r from-orange-900/20 to-rose-900/20 border border-orange-500/30 text-center"
+                    className="mt-12 p-10 rounded-3xl bg-gradient-to-r from-orange-900/20 to-rose-900/20 border border-orange-500/30 text-center max-w-5xl mx-auto"
                 >
-                    <h3 className="text-xl font-bold text-orange-200 mb-2">✔ Result: System runs automatically with minimal manual work.</h3>
-                    <p className="text-zinc-400">Example: Lead capture → Auto Email → CRM Update → Invoice → Notification.</p>
+                    <h3 className="text-3xl font-bold text-orange-200 mb-4">✔ Result: System runs automatically with minimal manual work.</h3>
+                    <p className="text-2xl text-zinc-400">Example: Lead capture → Auto Email → CRM Update → Invoice → Notification.</p>
                 </motion.div>
             </div>
         </SlideLayout>
