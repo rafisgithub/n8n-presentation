@@ -43,16 +43,20 @@ export default function Slide6_FullStack() {
                     {phases.map((phase, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: i * 0.1 }}
-                            className="flex flex-col items-center text-center p-6 rounded-xl bg-zinc-900/50 border border-zinc-800 hover:bg-zinc-800/50 transition-colors"
+                            transition={{ delay: i * 0.15 }}
+                            className="flex flex-col items-center text-center p-8 rounded-2xl bg-zinc-900/80 border-2 border-zinc-700/50 hover:border-blue-500/50 hover:bg-zinc-800 transition-all duration-300 transform hover:-translate-y-2 h-full justify-between shadow-lg"
                         >
-                            <phase.icon className={`w-12 h-12 mb-4 ${phase.color}`} />
-                            <h3 className="font-bold text-lg mb-3">{phase.title}</h3>
-                            <ul className="text-sm text-zinc-400 space-y-2">
+                            <div className="flex flex-col items-center">
+                                <phase.icon className={`w-14 h-14 mb-5 ${phase.color} drop-shadow-lg`} />
+                                <h3 className="font-extrabold text-2xl mb-4 tracking-tight leading-snug min-h-[3.5rem] flex items-center justify-center">{phase.title}</h3>
+                            </div>
+                            <ul className="text-base font-medium text-zinc-300 space-y-2.5 w-full">
                                 {phase.details.map((d, j) => (
-                                    <li key={j}>• {d}</li>
+                                    <li key={j} className="flex items-center justify-center bg-white/5 rounded-lg py-1 px-2">
+                                        {d}
+                                    </li>
                                 ))}
                             </ul>
                         </motion.div>
@@ -60,13 +64,18 @@ export default function Slide6_FullStack() {
                 </div>
 
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.6 }}
-                    className="mt-8 p-8 rounded-2xl bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-500/30 text-center"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.8, type: "spring" }}
+                    className="mt-10 p-10 rounded-3xl bg-gradient-to-br from-blue-950/60 to-purple-900/60 border-2 border-blue-400/40 text-center shadow-[0_0_50px_-10px_rgba(59,130,246,0.4)] backdrop-blur-sm"
                 >
-                    <h3 className="text-3xl font-bold text-blue-200 mb-3">✔ Result: User must operate the system manually.</h3>
-                    <p className="text-lg text-zinc-400">Example: E-commerce site, Portfolio website, Booking app (without auto-sync).</p>
+                    <h3 className="text-5xl font-black text-white mb-4 drop-shadow-xl tracking-tight">
+                        <span className="text-blue-400 mr-3">✔</span>
+                        Result: User must <span className="text-blue-200">operate manually</span>.
+                    </h3>
+                    <p className="text-2xl font-light text-zinc-200 max-w-4xl mx-auto leading-relaxed">
+                        Example: E-commerce site, Portfolio website, Booking app (without auto-sync).
+                    </p>
                 </motion.div>
             </div>
         </SlideLayout>
