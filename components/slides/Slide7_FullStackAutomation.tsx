@@ -10,7 +10,7 @@ const phases = [
         color: "text-zinc-400"
     },
     {
-        title: "Phase 4: Automation",
+        title: "Phase 4: Automation using n8n",
         icon: Zap,
         details: ["Workflow Automation", "AI Integrations", "Email / CRM Sync", "Payment Auto-handling"],
         color: "text-orange-500" // Highlighted
@@ -25,7 +25,7 @@ const phases = [
 
 export default function Slide7_FullStackAutomation() {
     return (
-        <SlideLayout title="2. Full-Stack + Automation" subtitle="Software + automatic workflows using n8n.">
+        <SlideLayout title="2. Full-Stack + Automation(n8n)" subtitle="Software + automatic workflows using n8n.">
             <div className="flex flex-col gap-8 h-full justify-center">
                 <div className="grid grid-cols-3 gap-6">
                     {phases.map((phase, i) => (
