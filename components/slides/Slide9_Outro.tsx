@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { User, IdCard, Briefcase, MapPin, Users } from "lucide-react";
+import { IdCard, Briefcase, MapPin, Users } from "lucide-react";
 import SlideLayout from "../SlideLayout";
 
 export default function Slide9_Outro() {
@@ -20,9 +20,14 @@ export default function Slide9_Outro() {
                         initial={{ y: -20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.2 }}
-                        className="w-32 h-32 rounded-full bg-gradient-to-br from-orange-500 to-rose-600 mb-8 flex items-center justify-center shadow-lg"
+                        className="w-48 h-48 rounded-full border-4 border-zinc-800 shadow-2xl mb-8 overflow-hidden relative group"
                     >
-                        <User className="w-16 h-16 text-white" />
+                        <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/20 to-rose-500/20 group-hover:opacity-0 transition-opacity duration-500" />
+                        <img
+                            src="/images/rafi.jpg"
+                            alt="Rafi Ahmed"
+                            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
+                        />
                     </motion.div>
 
                     <h2 className="text-6xl font-black text-white mb-4">Rafi Ahmed</h2>
