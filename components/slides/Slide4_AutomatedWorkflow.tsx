@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Globe, Database, Bot, Mail, Check, Terminal, Zap } from "lucide-react";
+import { Globe, Database, Bot, Mail, Check, Terminal, Zap, FileSpreadsheet, MessageSquare } from "lucide-react";
 import SlideLayout from "../SlideLayout";
 
+// --- Components ---
 // --- Components ---
 const Node = ({ icon: Icon, label, status, x, y, delay }: any) => {
     return (
@@ -10,7 +11,7 @@ const Node = ({ icon: Icon, label, status, x, y, delay }: any) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay, duration: 0.5 }}
-            className={`absolute flex flex-col items-center gap-3 p-6 rounded-2xl border-2 w-48 backdrop-blur-md shadow-2xl z-10 
+            className={`absolute flex flex-col items-center gap-3 p-4 rounded-2xl border-2 w-40 backdrop-blur-md shadow-2xl z-10 
             ${status === "waiting" ? "border-zinc-800 bg-zinc-900/80 text-zinc-600" : ""}
             ${status === "active" ? "border-orange-500 bg-zinc-900 text-orange-400 shadow-[0_0_30px_rgba(249,115,22,0.3)] ring-1 ring-orange-500/50" : ""}
             ${status === "success" ? "border-green-500 bg-zinc-900 text-green-400 shadow-[0_0_20px_rgba(34,197,94,0.2)]" : ""}
@@ -18,9 +19,9 @@ const Node = ({ icon: Icon, label, status, x, y, delay }: any) => {
             style={{ left: x, top: y }}
         >
             <div className={`p-3 rounded-full transition-colors duration-300 ${status === "active" ? "bg-orange-500/20 animate-pulse" : "bg-zinc-800"}`}>
-                <Icon className="w-8 h-8" />
+                <Icon className="w-6 h-6" />
             </div>
-            <span className="text-sm font-bold whitespace-nowrap">{label}</span>
+            <span className="text-xs font-bold whitespace-nowrap">{label}</span>
 
             {/* Connector Points */}
             <div className="absolute -right-1.5 top-1/2 w-3 h-3 rounded-full bg-zinc-700 border border-zinc-900" />
@@ -52,7 +53,7 @@ const Connection = ({ startX, endX, y, active }: any) => {
             />
             {active && (
                 <motion.circle
-                    r="6"
+                    r="4"
                     fill="#f97316"
                     style={{ offsetPath: `path("M ${startX} ${y} C ${startX + 50} ${y}, ${endX - 50} ${y}, ${endX} ${y}")` }}
                     animate={{ offsetDistance: ["0%", "100%"] }}
@@ -74,7 +75,7 @@ export default function Slide4_AutomatedWorkflow() {
 
             const addLog = (msg: string) => setLogs(prev => {
                 const newLogs = [...prev, msg];
-                return newLogs.slice(-5);
+                return newLogs.slice(-6);
             });
 
             // Reset
@@ -82,38 +83,46 @@ export default function Slide4_AutomatedWorkflow() {
             setLogs([]);
             await new Promise(r => setTimeout(r, 1000));
 
-            // Step 1: Webhook
+            // Step 1: Scrape Lead
             if (!mounted) return;
             setStep(1);
-            addLog("> WEBHOOK_RECEIVED: { id: 'evt_8392' }");
+            addLog("> SEARCH: Found new lead 'Sarah Connors'");
             await new Promise(r => setTimeout(r, 1000));
 
-            // Step 2: Database
+            // Step 2: AI Analyze & Write
             if (!mounted) return;
             setStep(2);
-            addLog("> POSTGRES: Fetching user profile...");
+            addLog("> AI: Profile analysis: CTO @ TechCorp");
+            addLog("> AI: Drafting personalized 'Series A' email...");
             await new Promise(r => setTimeout(r, 1200));
 
-            // Step 3: AI
+            // Step 3: Send Email
             if (!mounted) return;
             setStep(3);
-            addLog("> OPENAI: Generating personalized email...");
+            addLog("> GMAIL: Sending outreach... 200 OK");
             await new Promise(r => setTimeout(r, 1500));
 
-            // Step 4: Email
+            // Step 4: Check Reply
             if (!mounted) return;
             setStep(4);
-            addLog("> GMAIL: Sent successfully (200 OK)");
-            addLog("> WORKFLOW_COMPLETED in 1.4s");
+            addLog("> IMAP: New reply detected!");
+            addLog("> AI: Sentiment analysis: POSITIVE (0.98)");
+            await new Promise(r => setTimeout(r, 1000));
+
+            // Step 5: Store in Sheet
+            if (!mounted) return;
+            setStep(5);
+            addLog("> SHEETS: Added lead to 'Hot Prospects'");
+            addLog("> WORKFLOW_COMPLETED");
         };
 
         sequence();
-        const interval = setInterval(sequence, 6500);
+        const interval = setInterval(sequence, 8000);
         return () => { mounted = false; clearInterval(interval); };
     }, []);
 
     return (
-        <SlideLayout title="The n8n Way" subtitle="Visual, automated, and infinitely scalable.">
+        <SlideLayout title="The n8n Way" subtitle="Automate complex business logic visually.">
             <div className="relative h-full flex flex-col items-center justify-center">
 
                 {/* Workflow Canvas */}
@@ -124,39 +133,42 @@ export default function Slide4_AutomatedWorkflow() {
                         style={{ backgroundImage: "radial-gradient(#3f3f46 1px, transparent 1px)", backgroundSize: "24px 24px" }}
                     />
 
-                    {/* Nodes & Connections */}
-                    {/* Width 1000px context */}
-                    {/* Node Width 128px (w-32) */}
+                    {/* Nodes & Connections - 5 Steps */}
+                    {/* Canvas Width ~1200px (max-w-7xl) but SVG viewbox is 1000. Let's map appropriately. */}
+                    {/* Node Width 160px (w-40) */}
 
+                    {/* 1. Scrape Lead */}
                     <Node
-                        icon={Globe} label="Webhook" x="5%" y="40%" delay={0}
+                        icon={Globe} label="Find Lead" x="4%" y="40%" delay={0}
                         status={step >= 1 ? (step > 1 ? "success" : "active") : "waiting"}
                     />
-                    {/* 5% of 1000 = 50. Center Y ~225. + 40 (center of node height approx) -> actually using top:40% so ~180px + node half height */}
-                    {/* Center Y approx 300 (600/2) */}
+                    <Connection startX={120} endX={240} y={300} active={step >= 2} />
 
+                    {/* 2. AI Analyze */}
                     <Node
-                        icon={Globe} label="Webhook" x="5%" y="40%" delay={0}
-                        status={step >= 1 ? (step > 1 ? "success" : "active") : "waiting"}
-                    />
-
-                    <Connection startX={220} endX={350} y={300} active={step >= 2} />
-
-                    <Node
-                        icon={Database} label="Get User Data" x="30%" y="40%" delay={0.1}
+                        icon={Bot} label="AI Personalize" x="24%" y="40%" delay={0.1}
                         status={step >= 2 ? (step > 2 ? "success" : "active") : "waiting"}
                     />
-                    <Connection startX={550} endX={680} y={300} active={step >= 3} />
+                    <Connection startX={320} endX={440} y={300} active={step >= 3} />
 
+                    {/* 3. Send Email */}
                     <Node
-                        icon={Bot} label="AI Generate" x="55%" y="40%" delay={0.2}
+                        icon={Mail} label="Send Email" x="44%" y="40%" delay={0.2}
                         status={step >= 3 ? (step > 3 ? "success" : "active") : "waiting"}
                     />
-                    <Connection startX={880} endX={1010} y={300} active={step >= 4} />
+                    <Connection startX={520} endX={640} y={300} active={step >= 4} />
 
+                    {/* 4. Check Reply */}
                     <Node
-                        icon={Mail} label="Send Email" x="80%" y="40%" delay={0.3}
-                        status={step >= 4 ? "success" : "waiting"}
+                        icon={MessageSquare} label="Check Reply" x="64%" y="40%" delay={0.3}
+                        status={step >= 4 ? (step > 4 ? "success" : "active") : "waiting"}
+                    />
+                    <Connection startX={720} endX={840} y={300} active={step >= 5} />
+
+                    {/* 5. Update Sheet */}
+                    <Node
+                        icon={FileSpreadsheet} label="Update CRM" x="84%" y="40%" delay={0.4}
+                        status={step >= 5 ? "success" : "waiting"}
                     />
 
                     {/* Console Log Overlay */}
@@ -169,7 +181,7 @@ export default function Slide4_AutomatedWorkflow() {
                             <Terminal className="w-3 h-3 text-zinc-500" />
                             <span className="text-zinc-500 font-bold">LIVE EXECUTION LOGS</span>
                         </div>
-                        <div className="flex flex-col gap-1.5 h-24 overflow-hidden">
+                        <div className="flex flex-col gap-1.5 h-32 overflow-hidden">
                             <AnimatePresence mode="popLayout">
                                 {logs.map((log, i) => (
                                     <motion.div
@@ -177,9 +189,16 @@ export default function Slide4_AutomatedWorkflow() {
                                         initial={{ opacity: 0, x: -10 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         layout
-                                        className={`flex items-center gap-2 ${log.includes("SUCCESS") ? "text-green-400" : log.includes("WEBHOOK") ? "text-blue-400" : log.includes("OPENAI") ? "text-purple-400" : "text-zinc-400"}`}
+                                        className={`flex items-center gap-2 ${log.includes("SUCCESS") || log.includes("POSITIVE") ? "text-green-400" :
+                                            log.includes("SEARCH") ? "text-blue-400" :
+                                                log.includes("AI") ? "text-purple-400" :
+                                                    log.includes("Warning") ? "text-yellow-400" :
+                                                        "text-zinc-400"}`}
                                     >
-                                        <div className={`w-1.5 h-1.5 rounded-full ${log.includes("SUCCESS") ? "bg-green-500" : "bg-zinc-700"}`} />
+                                        <div className={`w-1.5 h-1.5 rounded-full ${log.includes("SUCCESS") || log.includes("POSITIVE") ? "bg-green-500" :
+                                            log.includes("AI") ? "bg-purple-500" :
+                                                "bg-zinc-700"}`}
+                                        />
                                         {log}
                                     </motion.div>
                                 ))}
@@ -195,7 +214,7 @@ export default function Slide4_AutomatedWorkflow() {
                         transition={{ delay: 1 }}
                     >
                         <Zap className="w-4 h-4 text-green-400 fill-current" />
-                        <span className="text-sm font-bold text-green-400">Time Saved: 15m 30s</span>
+                        <span className="text-sm font-bold text-green-400">Automated Leads: +142 today</span>
                     </motion.div>
 
                 </div>
